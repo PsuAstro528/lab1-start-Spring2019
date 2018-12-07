@@ -1,0 +1,14 @@
+language: julia
+os:
+  - linux
+julia:
+  - 1.0
+
+script:
+#  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
+#  - julia -e 'Pkg.clone(pwd())'
+#  - julia -e 'Pkg.test("PkgName",coverage=true)'
+#  - julia test/install_required_pacakges.jl
+  - julia -e 'using Pkg; Pkg.activate("."); Pkg.instantiate();'
+  - julia test/runtests.jl
+

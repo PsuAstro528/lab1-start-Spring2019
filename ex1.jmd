@@ -1,0 +1,69 @@
+
+# Lab 1, Exercise 1
+## Pass a simple test
+Before we delve into the meat of the course, we'll practice accessing the assignment via your private git repository ("repo"), cloning the repo on a syste running Jupyter notebook server with a Julia kernel, making some small changes, commiting your changes via git, and pushing those to github.
+If this is your first time using all of these toosl, then it probably sounds like a lot.  The good news is taht before long all of this will become second nature and you'll wonder how you got along without them. 
+
+In Julia strings are create by enclosing text between double quotes.  Single quotes are used to indicate a single character (as opposed to a string of length 1).  For example...
+
+```julia
+course_number = "Astro 528"
+semester = "Spring 2019"
+instructor = "Eric Ford"
+```
+
+Select the cell above and press shift-enter.  Julia will "execute" or "run" the code in that cell.  Notice that there's no output from the first two lines, but it prints the output from the last line.  In the cell below, create variables named `student_name`, `student dept` and `student_year` with values based on yourself.   
+
+```julia
+# WRITE YOUR CODE HERE
+# SOLUTION
+student_name = "Eric Ford"
+student_dept = "Astro"
+student_year = 10
+```
+
+Run the cell with your code and make sure there are no error messages.  Once we start doing real calculations, it will be important to test our work.  Therefore, you and I will both write tests that your code should pass. For example, in this case we can test that variables with the correct names exist, they're not empty, etc.
+
+But first, we need to tell Julia to import the Test package, so we have access to its functions and macros.  Julia has a large set of packages, that range from very basic functionality to complex science codes.  The quality also varries widely.  Several packages (like Test) are included in "Julia Base" so they're already installed for us.  We just need to tell Julia that we'd like access to their function and macros.  
+
+Run the cells below (in order) until you find a test that doesn't pass.  Then modify the code so that it passes.  Near the end, I've written a test with a bug in it for you to fix.
+
+```julia
+using Test
+```
+
+```julia
+# Now we test that variables with the correct names have been assigned
+@test isdefined(Main,:student_name)  # Main refers to the Main namespace, i.e. where 
+@test isdefined(Main,:student_dept)  # variables go by default if they're not in a module.
+@test isdefined(Main,:student_year)  # Most packages have at least one module.
+```
+
+```julia
+# Test some properties of an acceptable student name
+@test typeof(student_name) == String   
+@test length(student_name) > 3
+@test occursin(' ',student_name)
+@test typeof(student_dept) == String
+@test length(student_dept) >= 3
+@test typeof(student_year) <: Number   
+@test typeof(student_year) <: Integer   
+@test 1 <= student_year <= 10
+@test student_name == instructor
+```
+
+In the future, we'll separate out the tests for each exercise into a separate file (located in the test folder), so that they don't distract from the code we're writing.  
+
+
+```julia
+include("test/test1.jl");
+```
+
+
+Once you're happy with the results, it's time to save your notebook (File.Save and Checkpoint or icon of a floppy disk).
+Then read the [instructions for using ACI](https://psuastro528.github.io/lessons/how-to-use-aci/#commit-push) for how to commit your changes to your git rand submit your "responce" to this exercise.  
+    
+When you're done you can look into this lesson's ex2.ipynb notebook for the next exercise.
+
+```julia
+```
