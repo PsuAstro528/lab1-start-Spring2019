@@ -1,9 +1,8 @@
 # For mybinder.org to auto generate image
 julia 1 
-PyPlot
 NBInclude
 Glob
-Plots
+Weave
 # Packages suggested for this assignment
 # Additional packages added by student
 
