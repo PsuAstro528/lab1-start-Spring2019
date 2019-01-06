@@ -12,4 +12,10 @@ Once you're reading to commit and push your responce, look at the [help on the c
 #### Goal:  Experience the perils of floating point arithmetic
 From your Jupyter notebook server, work through ex2.ipynb
 
-
+## Exercise 3
+#### Goal:  Reflect on your goals for the semester
+Create a file goals.md in your repository.
+Using markdown, create headings for "My Experience" and "My Goals".
+Write one paragraph (1-5 sentances) about your previous programming experience.  Include a working link somewhere in the paragraph.
+Create a bulleted list of 3-5 goals for you to acheive during this course.  
+Remember to commit the file to your local respository and push it to your github, so it will be included in the pull request you create to submit your assignment.  
