@@ -155,7 +155,7 @@ b.  Write a function named `var_two_pass` take takes input similar to `mean_demo
 # INSERT CODE
 ```
 
-c.  Compare the accuracy of the results using data sets of different sizes ($N$) and values of $true_mean$.   Under what conditions do they give different results? 
+c.  Compare the accuracy of the results using data sets of different sizes ($N$) and values of `true_mean`.   Under what conditions do they give different results? 
 
 INSERT RESPONCE
 
@@ -173,9 +173,9 @@ function var_online(y::Array)
   mean = zero(y[1])
   M2 = zero(y[1])
   for i in 1:n
- diff_by_i = (y[i]-mean)/i
- mean = mean +diff_by_i
- M2 = M2 + (i-1)*diff_by_i*diff_by_i+(y[i]-mean)*(y[i]-mean)
+    diff_by_i = (y[i]-mean)/i
+    mean = mean +diff_by_i
+    M2 = M2 + (i-1)*diff_by_i*diff_by_i+(y[i]-mean)*(y[i]-mean)
   end
   variance = M2/(n-1)
 end
