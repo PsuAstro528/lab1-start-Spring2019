@@ -147,12 +147,26 @@ a.  Write a function named `var_one_pass` that takes inputs similar to `mean_dem
 
 ```julia
 # INSERT CODE
+function var_one_pass(y::Array)
+   n = length(y)
+   sum = zero(y[1])
+   sumsq = zero(y[1])  
+    for i in 1:n          
+      sum += y[i]
+      sumsq += y[i]^2
+   end                      
+   return(sumsq - sum^2/n)/(n-1)
+end
 ```
 
 b.  Write a function named `var_two_pass` take takes input similar to `mean_demo` and provides a two-pass algorithm to calculate the variance more accurately than the one pass algoritihm by using two loops over the $y_i$'s.
 
 ```julia
 # INSERT CODE
+function var_two_pass(y::Array) 
+    m = mean(y)
+    sum((y.-m).^2)/(length(y)-1)
+end
 ```
 
 c.  Compare the accuracy of the results using data sets of different sizes ($N$) and values of $true_mean$.   Under what conditions do they give different results? 

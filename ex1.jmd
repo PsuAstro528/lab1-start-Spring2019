@@ -61,7 +61,7 @@ include("test/test1.jl");
 
 
 Once you're happy with the results, it's time to save your notebook (File.Save and Checkpoint or icon of a floppy disk).
-Then read the [instructions for using ACI](https://psuastro528.github.io/lessons/how-to-use-aci/#commit-push) for how to commit your changes to your git rand submit your "responce" to this exercise.  
+Then read the [instructions for using ACI](https://psuastro528.github.io/lessons/how-to-use-aci/#commit-push) for how to commit your changes to your git repository and push them to github. 
     
 When you're done you can look into this lesson's ex2.ipynb notebook for the next exercise.
 
