@@ -4,6 +4,10 @@ os:
 julia:
   - 1.0
 
+branches:
+  except:
+  - original
+
 script:
 #  - if [[ -a .git/shallow ]]; then git fetch --unshallow; fi
 #  - julia -e 'Pkg.clone(pwd())'

@@ -18,17 +18,13 @@ else
    end
 end
 
-#=
 if haskey(Pkg.installed(),"Weave")
    weave_is_installed = true
    using Weave
 else
    weave_is_installed = false
-   function include_weave(name)
-         @warn("Weave not installed, not parsing " * name * ".")
-   end
+   @warn("Weave not installed, not parsing .jmd files.")
 end
-=#
 
 test_files = glob("test*.jl")
 println("# test_files=",test_files)
@@ -40,13 +36,14 @@ for fn_test in test_files
     if nbinclude_is_installed && isfile(fn_ex_nb)
        println("# Parsing ",fn_ex_nb, "..." )
        @nbinclude(fn_ex_nb)
-    #=
     elseif weave_is_installed && isfile(fn_ex_jmd)
-       println("# Parsing ", fn_ex_jmd, "..." )
-       include_weave(fn_ex_jmd,"markdown")
-    =#
+       println("# Tangling ", fn_ex_jmd, " into ", fn_ex_jl, "..." )
+       tangle(fn_ex_jmd)
+       include(fn_ex_jl)
+    elseif isfile(fn_ex_jl)
+       include(fn_ex_jl)
     else
-       println("# Can not parse either ", fn_ex_nb, " or ", fn_ex_jl )
+       println("# Can not parse either ", fn_ex_nb, " or ", fn_ex_jmd, " or ", fn_ex_jl )
        false
     end
     println("# Running test file ",fn_test,"...")  
