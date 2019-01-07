@@ -15,11 +15,7 @@ instructor = "Eric Ford"
 Select the cell above and press shift-enter.  Julia will "execute" or "run" the code in that cell.  Notice that there's no output from the first two lines, but it prints the output from the last line.  In the cell below, create variables named `student_name`, `student dept` and `student_year` with values based on yourself.   
 
 ```julia
-# WRITE YOUR CODE HERE
-# SOLUTION
-student_name = "Eric Ford"
-student_dept = "Astro"
-student_year = 10
+# INSERT YOUR CODE HERE
 ```
 
 Run the cell with your code and make sure there are no error messages.  Once we start doing real calculations, it will be important to test our work.  Therefore, you and I will both write tests that your code should pass. For example, in this case we can test that variables with the correct names exist, they're not empty, etc.
